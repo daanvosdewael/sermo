@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Sermo",
+  "version": "1.0.0",
+  "description": "Extension to focus the ongoing Google Meet session and mute or unmute microphone.",
+  "author": "Daan Vos de Wael",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "switch-tab-and-toggle-mic": {
+      "suggested_key": {
+        "default": "Alt+D",
+        "mac": "Alt+D"
+      },
+      "description": "Switch tab and toggle microphone"
+    }
+  },
+  "host_permissions": [
+    "https://meet.google.com/*"
+  ],
+  "icons": {
+    "16": "icon-16.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  },
+  "permissions": [
+    "tabs"
+  ]
+}
