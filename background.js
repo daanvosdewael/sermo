@@ -1,3 +1,12 @@
+function toggleMute() {
+    document.dispatchEvent(
+        new KeyboardEvent('keydown', {
+            metaKey: true,
+            keyCode: 68,
+        }),
+    );
+}
+
 chrome.commands.onCommand.addListener(command => {
     if (command !== 'switch-tab-and-toggle-mic') {
         return false;
@@ -9,8 +18,9 @@ chrome.commands.onCommand.addListener(command => {
 
             chrome.windows.update(tab.windowId, { focused: true });
             chrome.tabs.update(tab.id, { active: true });
-            chrome.tabs.executeScript(tab.id, {
-                file: './toggleMute.js',
+            chrome.scripting.executeScript({
+                target: { tabId: tab.id },
+                function: toggleMute,
             });
         }
     });
