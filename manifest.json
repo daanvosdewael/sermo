@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Sermo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Extension to focus the ongoing Google Meet session and mute or unmute microphone.",
   "author": "Daan Vos de Wael",
   "background": {
